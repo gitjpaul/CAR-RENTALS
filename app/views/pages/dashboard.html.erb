@@ -1,0 +1,16 @@
+<div class="container_dash text-center">
+  <h1>DASHBOARD</h1>
+  <div class="infos m-5">
+    <h2><%= current_user.firstname %> <%= current_user.name %></h2>
+  </div>
+
+  <% @bookings.each do |booking| %>
+    <div class="card" style="width: 18rem;">
+      <%= image_tag ("#{booking.car.url_car}"), class: "card-img-top"%>
+      <div class="card-body">
+        <h5 class="card-title"><%= booking.car.model %></h5>
+        <p class="card-text"> <%= booking.car.brand %></p>
+        <h6 class="card-title"> <%=  booking.total_price %> €</h6>
+      </div>
+    </div>
+  <%end%>

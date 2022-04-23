@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <% @cars.each do |car| %>
+      <div class="col-sm-4">
+        <div class="card" style="width: 24rem;">
+          <%= image_tag ("#{car.url_car}"), class: "card-img-top"%>
+          <div class="card-body">
+            <h5 class="card-title"><%= car.model %></h5>
+            <p class="card-text"> <%= car.brand %></p>
+            <h6 class="card-title"> <%=  car.price_per_day %> €</h6>
+            <%= link_to "Book these car now!", car_path(car), class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    <%end%>
+  </div>
+</div>

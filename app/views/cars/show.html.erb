@@ -1,0 +1,17 @@
+
+<div class="booking container d-flex justify-content-space-between p-2 m-5 pt-5 shadow-sm p-3 mb-5 bg-white rounded">
+  <div>
+      <div><%= image_tag ("#{@car.url_car}"), class: "card-img-top"%></div>
+  </div>
+  <div class="col-sm-12 w-50 p-3">
+    <%= simple_form_for [ @car, @booking ] do |f| %>
+      <%= f.input :start_date, label: "Date de début" %>
+      <%= f.input :end_date, label: "Date de fin" %>
+      <p>Prix total : <%= @car.price_per_day%> € par jour</p>
+      <%= f.submit "Réserve ta voiture", class: "bouton_reserver" %>
+
+
+    <% end %>
+  <%= link_to "Retour", car_path(@car), class:"btn btn-lg btn-secondary mt-5 .text-center"%>
+  </div>
+</div>
